@@ -68,6 +68,10 @@ button:focus-visible {
 }
 
 .timerpage {
+  display: flex;
   text-align: center;
-  justify-content: center;
+  align-items: center;
+  font: italic;
+  padding-left: 32rem;
+  padding-right: 32rem;
 }
