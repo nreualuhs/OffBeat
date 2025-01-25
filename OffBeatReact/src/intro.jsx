@@ -1,4 +1,4 @@
-import './app.css'
+import './App.css'
 import { Link } from 'react-router-dom';
 
 function StartIntro()
@@ -9,11 +9,11 @@ function StartIntro()
             <h1>Offbeat</h1>
             <h2>Pick A Choice</h2>
                 <div>
-                    <Link to="/StartPage">Play Game</Link>
+                    <Link to="/ClientJoin">Play Game</Link>
 
                     <br></br><br></br>
                     
-                    <Link to="/TimerPage">Host Game</Link>
+                    <Link to="/StartPage">Host Game</Link>
                 </div>
         </div>
         </>
