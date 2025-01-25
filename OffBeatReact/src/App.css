@@ -5,6 +5,13 @@
   text-align: center;
 }
 
+.introduction {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-left: 30rem;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
