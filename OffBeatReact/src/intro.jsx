@@ -1,4 +1,5 @@
 import './app.css'
+import { Link } from 'react-router-dom';
 
 function StartIntro()
 {
@@ -8,9 +9,11 @@ function StartIntro()
             <h1>Offbeat</h1>
             <h2>Pick A Choice</h2>
                 <div>
-                    <button type="button" name="client" id="name">Host Game</button>
+                    <Link to="/StartPage">Play Game</Link>
+
                     <br></br><br></br>
-                    <button type="button" name="server" id="server">Play Game</button>
+                    
+                    <Link to="/TimerPage">Host Game</Link>
                 </div>
         </div>
         </>
