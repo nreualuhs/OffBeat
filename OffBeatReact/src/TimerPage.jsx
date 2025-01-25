@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './index.css'
 
-function Timer() {
+function Timer({textDisplay}) {
     const [seconds, setSeconds] = useState(20);
 
     useEffect(() => {
@@ -14,9 +14,15 @@ function Timer() {
     }, [seconds]);
 
     return (
-        <div className="timerpage">
-            <h1>DANCE!</h1>
-            <h1>{seconds}</h1>
+        <div>
+            {seconds > 0 ? (
+                <>
+                <h1>DANCE!</h1>
+                <h1>{seconds}</h1>
+                </>
+            ) : (
+                <h1>{textDisplay}</h1>
+            )}
         </div>
     );
 }

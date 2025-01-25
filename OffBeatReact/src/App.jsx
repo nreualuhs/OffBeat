@@ -33,9 +33,11 @@ function App() {
     </>
   ) */
  return(
-  <div>
-    <Timer></Timer>
-  </div>
+  <>
+  <div className="timerpage">
+    <Timer textDisplay={"The imposter is..."}></Timer>
+  </div> 
+  </>
  );
  
 }
