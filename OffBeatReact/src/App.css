@@ -5,6 +5,22 @@
   text-align: center;
 }
 
+.introduction {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding-left: 30rem;
+  padding-right: 30rem;
+}
+
+.clientWait {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
