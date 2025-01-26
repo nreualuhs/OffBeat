@@ -1,10 +1,10 @@
 import asyncio
-import websockets
+
+from websockets.asyncio.server import serve
 
 connected = set()
 
-#websocket handler takes websocket connection(between client/server)
-async def echo(websocket, path):
+async def echo(websocket):
     #register a new ebsocket
     connected.add(websocket)
     try:
@@ -17,7 +17,10 @@ async def echo(websocket, path):
         #unregister
         connected.remove(websocket)
 
-start_server = websockets.serve(echo, 'localhost',5000)
+async def main():
+    print("running")
+    async with serve(echo, "localhost", 5000):
+        await asyncio.get_running_loop().create_future()  # run forever
 
-asyncio.get_event_loop().run_until_complete(start_server)
-asyncio.get_event_loop().run_forever()
+if __name__ == "__main__":
+    asyncio.run(main())
