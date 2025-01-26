@@ -17,7 +17,10 @@ import StartPage from './StartPage.jsx'
 
 import { Route, Routes } from 'react-router-dom'
 
+//const socket = new Websocket();
+
 function App() {
+
   /*
   const [client, setClient] = useState(null)
   useEffect(() => {
@@ -48,7 +51,7 @@ function App() {
  return(
   <Routes>
     <Route path="/" element={<StartIntro />} />
-    <Route path="/TimerPage" element={<Timer textDisplay={"The imposter is..."}/>} />
+    <Route path="/TimerPage" element={<Timer />} />
     <Route path="/clientWait" element={<ClientWait />} />
     <Route path="/imposterDance" element={<ImposterDance />} />
     <Route path="/imposterWin" element={<ImposterWin />} />
