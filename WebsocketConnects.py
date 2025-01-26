@@ -1,8 +1,25 @@
 import asyncio
+import json
 
 from websockets.asyncio.server import serve
 
 connected = set()
+
+def send_all(message):
+    for conn in connected:
+        conn.send(message)
+
+def event_handler(websocket, message):
+    data = json.loads(message)
+
+    if (data["event"] == "join"):
+        send_all(message)
+    if (data["event"] == "start"):
+        send_all(message)
+    if (data["event"] == "create"):
+        host = websocket
+    else:
+        connected.add(websocket)
 
 async def echo(websocket):
     #register a new ebsocket
@@ -10,9 +27,8 @@ async def echo(websocket):
     try:
         #implement logic
         async for message in websocket:
-            for conn in connected:
-                if conn != websocket:
-                    await conn.send(f'New message for you: {message}')
+            event_handler(websocket, message)
+            print(json.loads(message))
     finally:
         #unregister
         connected.remove(websocket)
