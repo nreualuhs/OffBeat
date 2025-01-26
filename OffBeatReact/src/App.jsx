@@ -51,7 +51,7 @@ function App() {
  return(
   <Routes>
     <Route path="/" element={<StartIntro />} />
-    <Route path="/TimerPage" element={<Timer />} />
+    <Route path="/TimerPage" element={<Timer textDisplay={"The imposter is..."} />} />
     <Route path="/clientWait" element={<ClientWait />} />
     <Route path="/imposterDance" element={<ImposterDance />} />
     <Route path="/imposterWin" element={<ImposterWin />} />
