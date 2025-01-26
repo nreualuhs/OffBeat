@@ -18,11 +18,11 @@ function Timer({textDisplay}) {
             <div className="content">
                 {seconds > 0 ? (
                     <>
-                    <h1>DANCE!</h1>
-                    <h1>{seconds}</h1>
+                    <h1 className="subtitle">DANCE! DANCE! DANCE!</h1>
+                    <h1 className="countdown">{seconds}</h1>
                     </>
             ) : (
-                    <h1>{textDisplay}</h1>
+                    <h1 className="finaltitle">{textDisplay}</h1>
             )}
         </div>
     );

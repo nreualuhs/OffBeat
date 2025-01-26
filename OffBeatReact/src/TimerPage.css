@@ -1,0 +1,20 @@
+.subtitle {
+    color: rgb(231 231 231);
+    -webkit-text-stroke-color: rgb(94 35 157);
+    -webkit-text-stroke-width: 1px;
+    font-size: 5rem;
+}
+
+.countdown {
+    color: rgb(231 231 231);
+    -webkit-text-stroke-color: rgb(94 35 157);
+    -webkit-text-stroke-width: 1px;
+    font-size: 8rem;
+}
+
+.finaltitle {
+    color: rgb(231 231 231);
+    -webkit-text-stroke-color: #6b110e;
+    -webkit-text-stroke-width: 2px;
+    font-size: 8rem;
+}
