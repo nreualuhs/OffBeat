@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
+import socket from './StartPage';
 function JoinGame() {
+    console.log(socket)
     return(
         <>
             <h1>OffBeat</h1>
@@ -7,9 +9,9 @@ function JoinGame() {
             <h2>Look who joined!</h2>
             <div>
                 <ul>
-                    <li>name 1</li>
-                    <li>name 2</li>
-                    <li>name 3</li>
+                    <li>Empty</li>
+                    <li>Empty</li>
+                    <li>Empty</li>
                 </ul>
             </div>
             

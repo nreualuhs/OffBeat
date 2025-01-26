@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from 'react'
 import './App.css'
+import { WebSocketProvider } from './WebSocketContext';
 import StartClient from './clientJoin.jsx'
 import Timer from './TimerPage.jsx'
 import StartIntro from './intro.jsx'
@@ -16,8 +17,6 @@ import JoinGame from './joinGame.jsx'
 import StartPage from './StartPage.jsx'
 
 import { Route, Routes } from 'react-router-dom'
-
-//const socket = new Websocket();
 
 function App() {
 
@@ -64,5 +63,4 @@ function App() {
  );
  
 }
-
 export default App
