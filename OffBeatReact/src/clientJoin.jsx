@@ -29,8 +29,10 @@ function StartClient() {
 
     return (
         <div className="clientJoin">
-            <img src="./resources/Title.png" alt="OffBeat Title" height="350"></img>
+            <img src="./resources/Title.png" alt="OffBeat Title" height="250"></img>
+            <br></br>
             <label htmlFor="username">Enter your name</label>
+            <br></br>
             <input type="text" id="username" name="username" placeholder="John/Jane Doe" />
             <p id="error-repeat" style={{ color: 'red' }}></p>
             <button type="button" id="joinbtn" onClick={clientJoin}>
