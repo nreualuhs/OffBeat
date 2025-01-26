@@ -18,13 +18,14 @@ async def echo(websocket):
             print(message)
             parsed_message = json.loads(message)
             print(parsed_message)
-            if(parsed_message['type'] == "join"):
+            if(parsed_message['event'] == "join"):
                 players.append(parsed_message['message'])
-                print(parsed_message['message'], ' just joined the game')
-            if(parsed_message['type'] == "start"):
-                # generate two rankdom soing links
-                players.append(parsed_message['message'])
-                print(parsed_message['message'], ' just joined the game')
+                print(parsed_message['message'], 'just joined the game')
+
+            if(parsed_message['event'] == "play"):
+                count = len(players)
+                
+                
                 # for conn in connected:
                 #     if conn != websocket:
                 #         await conn.send(message)

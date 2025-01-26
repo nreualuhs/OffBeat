@@ -23,14 +23,14 @@ function App() {
     <Routes>
       <Route path="/" element={<StartIntro />} />
       <Route path="/TimerPage" element={<Timer textDisplay={"The imposter is..."} />} />
-      <Route path="/clientWait" element={<ClientWait />} />
+      <Route path="/clientWait" element={<ClientWait socket={socket} />} />
       <Route path="/imposterDance" element={<ImposterDance />} />
       <Route path="/imposterWin" element={<ImposterWin />} />
       <Route path="/regularDance" element={<RegularDance />} />
       <Route path="/regularWin" element={<RegularWin />} />
       <Route path="/clientJoin" element={<ClientJoin socket={socket} />} />
-      <Route path="/joinGame" element={<JoinGame />} />
-      <Route path="/StartPage" element={<StartPage />} />
+      <Route path="/joinGame" element={<JoinGame socket={socket}/>} />
+      <Route path="/StartPage" element={<StartPage/>} />
     </Routes>
   </PlayerProvider>
  );
