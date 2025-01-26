@@ -17,34 +17,19 @@ import StartPage from './StartPage.jsx'
 
 import { Route, Routes } from 'react-router-dom'
 
+// const [socket, setSocket] = useState(null)
+// useEffect(() => {
+//   console.log("Hello from use Effect")
+//   const socket = new WebSocket('wss://localhost:5000');
+
+//   socket.addEventListener('open', function (event) {
+//     console.log('Welcome to OffBeat!')
+//   }); 
+  
+//   setSocket(socket)
+// }, [])
 function App() {
-  /*
-  const [client, setClient] = useState(null)
-  useEffect(() => {
-    console.log("Hello from use Effect")
-    // Create WebSocket connection.
-    const socket = new WebSocket('ws://localhost:5000');
-
-    // Connection opened
-    socket.addEventListener('open', function (event) {
-        console.log('Connected to the WS Server!')
-    });
-
-    // Connection closed
-    socket.addEventListener('close', function (event) {
-        console.log('Disconnected from the WS Server!')
-    });
-
-    // Listen for messages
-    socket.addEventListener('message', function (event) {
-        console.log('Message from server ', event.data);
-    });
-    // Send a msg to the websocket
-    const sendMsg = () => {
-        socket.send('Hello from Client!');}
-    setClient(socket)
-  }, [])*/
-
+  
  return(
   <Routes>
     <Route path="/" element={<StartIntro />} />

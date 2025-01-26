@@ -1,18 +1,42 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 function StartClient() {
-    return(
-            <div class="clientJoin">
-                <h1>Offbeat</h1>
+    const [socket, setSocket] = useState(null);
 
-                <label for="gamecode">Enter the Game Code</label>
-                <input type="number" id="gamecode" name="gamecode" placeholder="12345"></input>
-                <br></br><br></br>
-                <label for="username">Enter your name</label>
-                <input type="text" id="username" name="username" placeholder="John/Jane Doe"></input>
-                <br></br><br></br>
-                <Link to="/ClientWait">Join</Link>
-            </div>
+    function clientJoin() {
+        const inputName = document.getElementById("username").value;
+        if (inputName) {
+            // Create WebSocket connection
+            const newSocket = new WebSocket('ws://localhost:5000');
+
+            // Set WebSocket in state
+            setSocket(newSocket);
+
+            // Connection opened
+            newSocket.addEventListener('open', () => {
+                console.log(`${inputName} connected to the WS Server!`);
+                newSocket.send({"join": inputName});
+            });
+
+            // Connection closed
+            newSocket.addEventListener('close', () => {
+                console.log(`${inputName} disconnected from the WS Server!`);
+            });
+        } else {
+            document.getElementById("error-repeat").textContent = "Please enter a valid name!";
+        }
+    }
+
+    return (
+        <div className="clientJoin">
+            <h1>Offbeat</h1>
+            <label htmlFor="username">Enter your name</label>
+            <input type="text" id="username" name="username" placeholder="John/Jane Doe" />
+            <p id="error-repeat" style={{ color: 'red' }}></p>
+            <button type="button" id="joinbtn" onClick={clientJoin}>
+                Join
+            </button>
+        </div>
     );
 }
 
