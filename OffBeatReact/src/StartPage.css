@@ -1,0 +1,14 @@
+.instrutions {
+    color: rgb(231 231 231);
+    -webkit-text-stroke-color: rgb(94 35 157);
+    -webkit-text-stroke-width: 1px;
+    font-size: 3rem;
+}
+
+button {
+    background-color: rgb(87 213 143);
+    border-width: 3px;
+    border-color: darkolivegreen;
+    font-style: italic;
+    font-size: 20px;
+}
