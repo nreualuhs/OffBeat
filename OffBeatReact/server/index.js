@@ -1,7 +1,7 @@
 const express = require('express')
 const dotenv = require('dotenv');
 
-const port = 5173
+const port = 5000
 
 dotenv.config()
 
@@ -26,14 +26,12 @@ app.get('/auth/login', (req, res) => {
                     user-read-email \
                     user-read-private"
 
-    var state = generateRandomString(16);
 
     var auth_query_parameters = new URLSearchParams({
         response_type: "code",
         client_id: spotify_client_id,
         scope: scope,
         redirect_uri: "http://localhost:5173/auth/callback",
-        state: state
     })
 
     res.redirect('https://accounts.spotify.com/authorize/?' + auth_query_parameters.toString());
@@ -67,10 +65,10 @@ app.get('/auth/callback', (req, res) => {
 
 app.get('/auth/token', (req, res) => {
     res.json(
-    {
-        access_token: access_token
-    })
-})
+       {
+          access_token: access_token
+       })
+  })
 
 app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`)
