@@ -2,27 +2,34 @@
   "name": "offbeatreact",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "node server"
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "router": "^2.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
+    "dotenv": "^16.4.7",
     "eslint": "^9.17.0",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
+    "express": "^4.21.2",
     "globals": "^15.14.0",
+    "http-proxy-middleware": "^3.0.3",
+    "npm-run-all": "^4.1.5",
+    "request": "^2.88.2",
     "vite": "^6.0.5"
   }
 }

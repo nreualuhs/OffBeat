@@ -1,12 +1,25 @@
-/*import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg' */
+import React, { useState, useEffect} from 'react'
+
 //import './App.css'
-import StartPage from './StartPage.jsx'
 import Timer from './TimerPage.jsx'
+import Login from './Login.jsx'
 
 function App() {
+  const [token, setToken] = useState('');
+
+  useEffect(() => {
+
+    async function getToken() {
+      const response = await fetch('/auth/token');
+      const json = await response.json();
+      setToken(json.access_token);
+    }
+
+    getToken();
+
+  }, []);
   /*const [count, setCount] = useState(0)
+
 
   return (
     <>
@@ -34,7 +47,10 @@ function App() {
   ) */
  return(
   <div>
-    <Timer></Timer>
+    <>
+        { (token === '') ? <Login/> : <WebPlayback token={token} /> }
+    </>
+    {/* <Timer></Timer> */}
   </div>
  );
  
