@@ -15,15 +15,15 @@ function StartClient() {
             // Connection opened
             newSocket.addEventListener('open', () => {
                 console.log(`${inputName} connected to the WS Server!`);
+                newSocket.send({"join": inputName});
             });
 
             // Connection closed
             newSocket.addEventListener('close', () => {
                 console.log(`${inputName} disconnected from the WS Server!`);
             });
-            
         } else {
-            document.getElementById("error-repeat").textContent = "Please enter a valid name.";
+            document.getElementById("error-repeat").textContent = "Please enter a valid name!";
         }
     }
 
