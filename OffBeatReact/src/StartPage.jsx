@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 function StartPage() {
+    
     return(
         <div>
             <h1>Welcome to OffBeat!</h1>
