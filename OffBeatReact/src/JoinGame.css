@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  align-items: center;
+}
+
+.List {
+    color: rgb(231 231 231);
+    -webkit-text-stroke-color: rgb(94 35 157);
+    -webkit-text-stroke-width: 1px;
+    font-size: 2rem;
+    list-style-type: circle;
+
+}
+
+button {
+    background-color: rgb(87 213 143);
+    border-width: 3px;
+    border-color: darkolivegreen;
+    font-style: italic;
+    font-size: 20px;
+    width:200px;
+    white-space: nowrap;
+}
+
+.header2 {
+    color: rgb(231 231 231);
+    -webkit-text-stroke-color: rgb(94 35 157);
+    -webkit-text-stroke-width: 1px;
+    font-size: 2rem;
+}
