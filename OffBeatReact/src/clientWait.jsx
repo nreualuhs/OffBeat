@@ -6,7 +6,7 @@ function ClientWait()
     return(
         <>
         <div class="clientWait">
-            <h1>Offbeat</h1>
+        <img src="./resources/Title.png" alt="OffBeat Title" height="350"></img>
             <br></br>
             <h2>You're In! Look Up to the Screen!</h2>
         </div>

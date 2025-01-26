@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 function JoinGame() {
     return(
         <>
-            <h1>OffBeat</h1>
-            <Link to="/TimerPage">PLAY GAME</Link>
+            <img src="./resources/Title.png" alt="OffBeat Title" height="350"></img>
+            <button><Link to="/TimerPage">PLAY GAME</Link></button>
             <h2>Look who joined!</h2>
             <div>
                 <ul>

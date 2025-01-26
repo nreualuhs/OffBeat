@@ -29,7 +29,7 @@ function StartClient() {
 
     return (
         <div className="clientJoin">
-            <h1>Offbeat</h1>
+            <img src="./resources/Title.png" alt="OffBeat Title" height="350"></img>
             <label htmlFor="username">Enter your name</label>
             <input type="text" id="username" name="username" placeholder="John/Jane Doe" />
             <p id="error-repeat" style={{ color: 'red' }}></p>

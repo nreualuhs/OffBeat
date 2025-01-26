@@ -1,13 +1,13 @@
-import './App.css'
+import './intro.css'
 import { Link } from 'react-router-dom';
 
 function StartIntro()
 {
     return(
         <>
-        <div  class="introduction">
-            <h1>Offbeat</h1>
-            <h2>Pick A Choice</h2>
+        <div class="introduction">
+        <img src="./resources/Title.png" alt="OffBeat Title" height="350"></img>
+            <h1>Pick A Choice</h1>
                 <div>
                     <Link to="/ClientJoin">Play Game</Link>
 

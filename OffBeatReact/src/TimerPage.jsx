@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './index.css'
+import './timerpage.css'
 
 function Timer({textDisplay}) {
     const [seconds, setSeconds] = useState(20);

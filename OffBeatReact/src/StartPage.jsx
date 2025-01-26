@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom';
+import "./StartPage.css"
+
+
 function StartPage() {
     
     return(
-        <div>
-            <h1>Welcome to OffBeat!</h1>
-            <h2>Instructions: find the imposter who is listening to different music!</h2>
+        <div class="start">
+            <img src="./resources/Title.png" alt="OffBeat Title" height="350"></img>
+            <h2 class="instrutions">Instructions: find the imposter who is listening to different music!</h2>
             <Link to="/JoinGame">START</Link>
         </div>
     );
