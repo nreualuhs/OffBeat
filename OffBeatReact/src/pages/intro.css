@@ -1,0 +1,36 @@
+body {
+    background-image: url("./resources/backgroundPurple.png");
+    background-size: 100% 100%; 
+}
+
+h1 {
+    color: rgb(231 231 231);
+    -webkit-text-stroke-color: rgb(94 35 157);
+    -webkit-text-stroke-width: 1px;
+    white-space: nowrap; /* Prevent text wrapping */
+    font-size: 3rem; /* Adjust as needed */
+}
+
+.introduction {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-left: 30rem;
+    padding-right: 30rem;
+}
+
+.PlayerButton {
+    background-color: rgb(87 213 143);
+    border-width: 3px;
+    border-color: darkolivegreen;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.HostButton {
+    background-color: rgb(87 213 143);
+    border-width: 3px;
+    border-color: darkolivegreen;
+    font-style: italic;
+    font-size: 20px;
+}

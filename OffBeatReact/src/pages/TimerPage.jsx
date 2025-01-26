@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import './timerpage.css'
+import "./TimerPage.css";
+import image from "./images/dancebg.png";
 
 function Timer({textDisplay}) {
     const [seconds, setSeconds] = useState(20);
@@ -14,14 +15,14 @@ function Timer({textDisplay}) {
     }, [seconds]);
 
     return (
-        <div>
-            {seconds > 0 ? (
-                <>
-                <h1>DANCE!</h1>
-                <h1>{seconds}</h1>
-                </>
+            <div className="content">
+                {seconds > 0 ? (
+                    <>
+                    <h1>DANCE!</h1>
+                    <h1>{seconds}</h1>
+                    </>
             ) : (
-                <h1>{textDisplay}</h1>
+                    <h1>{textDisplay}</h1>
             )}
         </div>
     );
