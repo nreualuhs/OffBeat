@@ -13,9 +13,17 @@ export function PlayerProvider({ children }) {
         return newPlayers;
     });
     };
+    const removePlayer = (player) => {
+        console.log(`Removing player: ${player}`);
+        setPlayers((prev) => {
+        const newPlayers = prev.filter(p => p !== player);
+        console.log('Updated players:', newPlayers); // Logs the updated array
+        return newPlayers;
+    });
+    };
 
     return (
-        <PlayerContext.Provider value={{ players, addPlayer }}>
+        <PlayerContext.Provider value={{ players, addPlayer, removePlayer}}>
             {children}
         </PlayerContext.Provider>
     );

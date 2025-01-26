@@ -5,8 +5,8 @@ from websockets.asyncio.server import serve
 
 # connected = a set of all CLIENTS/think devices that are currently connected to our server
 connected = set()
-players = {}
-
+players = []
+dict = {}
 # websocket = a singular client = THIS IS HOW WE INTERACT WITH THIS CLIENT
 async def echo(websocket):
     #register a new ebsocket
@@ -19,7 +19,9 @@ async def echo(websocket):
             parsed_message = json.loads(message)
             print(parsed_message)
             if(parsed_message['type'] == "join"):
-                players[parsed_message['message']] = websocket
+                newPlayer = parsed_message['message']
+                dict[websocket] = newPlayer
+                players.append(newPlayer)
                 for player in players:
                     print(player)
                     f_string = f'{{"type":"join","message":"{player}"}}'
@@ -40,6 +42,11 @@ async def echo(websocket):
     finally:
         #unregister
         connected.remove(websocket)
+        players.remove(dict[websocket])
+        f_string = f'{{"type":"leave","message":"{player}"}}'
+        for conn in connected:
+            if conn != websocket:
+                await conn.send(f_string)
 
 async def main():
     print("running")

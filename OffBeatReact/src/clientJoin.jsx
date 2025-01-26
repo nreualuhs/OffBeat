@@ -3,7 +3,7 @@ import { PlayerContext } from './PlayerContext';//import player context
 import { Navigate, useNavigate } from 'react-router-dom';
 
 function StartClient({socket}) {
-    const { addPlayer } = useContext(PlayerContext);
+    const { addPlayer, removePlayer } = useContext(PlayerContext);
     const navigate = useNavigate()
 
     function clientJoin() {
@@ -32,7 +32,13 @@ function StartClient({socket}) {
               const decode = JSON.parse(event.data);
               console.log(decode);
               console.log(decode.message);
-              addPlayer(decode.message);
+              if(decode.type == "join") {
+                addPlayer(decode.message);
+              }
+              if(decode.type == "leave") {
+                console.log("leaving!")
+                removePlayer(decode.message);
+              }
               // socket.send(JSON.stringify({join: inputName}));//send username
             });
 
