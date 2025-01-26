@@ -1,18 +1,39 @@
 import asyncio
+import json
 
 from websockets.asyncio.server import serve
 
+# connected = a set of all CLIENTS/think devices that are currently connected to our server
 connected = set()
+players = []
 
+# websocket = a singular client = THIS IS HOW WE INTERACT WITH THIS CLIENT
 async def echo(websocket):
     #register a new ebsocket
     connected.add(websocket)
     try:
         #implement logic
+        # every single time we get a message from this specific web socket
         async for message in websocket:
+            print(message)
+            parsed_message = json.loads(message)
+            print(parsed_message)
+            if(parsed_message['type'] == "join"):
+                players.append(parsed_message['message'])
+                print(parsed_message['message'], ' just joined the game')
+            if(parsed_message['type'] == "start"):
+                # generate two rankdom soing links
+                players.append(parsed_message['message'])
+                print(parsed_message['message'], ' just joined the game')
+                # for conn in connected:
+                #     if conn != websocket:
+                #         await conn.send(message)
+                # return
+            # go through all the connected ppl
             for conn in connected:
+
                 if conn != websocket:
-                    await conn.send(f'New message for you: {message}')
+                    await conn.send(message)
     finally:
         #unregister
         connected.remove(websocket)
