@@ -3,32 +3,40 @@ import json
 
 from websockets.asyncio.server import serve
 
+# connected = a set of all CLIENTS/think devices that are currently connected to our server
 connected = set()
+players = {}
 
-def send_all(message):
-    for conn in connected:
-        conn.send(message)
-
-def event_handler(websocket, message):
-    data = json.loads(message)
-
-    if (data["event"] == "join"):
-        send_all(message)
-    if (data["event"] == "start"):
-        send_all(message)
-    if (data["event"] == "create"):
-        host = websocket
-    else:
-        connected.add(websocket)
-
+# websocket = a singular client = THIS IS HOW WE INTERACT WITH THIS CLIENT
 async def echo(websocket):
     #register a new ebsocket
     connected.add(websocket)
     try:
         #implement logic
+        # every single time we get a message from this specific web socket
         async for message in websocket:
-            event_handler(websocket, message)
-            print(json.loads(message))
+            print(message)
+            parsed_message = json.loads(message)
+            print(parsed_message)
+            if(parsed_message['type'] == "join"):
+                players[parsed_message['message']] = websocket
+                for player in players:
+                    print(player)
+                    f_string = f'{{"type":"join","message":"{player}"}}'
+                    await websocket.send(f_string)
+
+                print(parsed_message['message'], 'just joined the game')
+            if(parsed_message['type'] == "start"):
+                # generate two rankdom soing links
+                print()
+                # for conn in connected:
+                #     if conn != websocket:
+                #         await conn.send(message)
+                # return
+            # go through all the connected ppl
+            for conn in connected:
+                if conn != websocket:
+                    await conn.send(message)
     finally:
         #unregister
         connected.remove(websocket)
